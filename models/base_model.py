@@ -41,7 +41,7 @@ class BaseModel:
     def to_dict(self):
         """Returns the dictionary of the represented instances"""
 
-        ret_dict = self.__dict__
+        ret_dict = self.__dict__.copy()
         ret_dict["__class__"] = self.__class__.__name__
         ret_dict["created_at"] = self.created_at.isoformat()
         ret_dict["updated_at"] = self.updated_at.isoformat()
