@@ -5,6 +5,7 @@ import os
 import json
 from pathlib import Path
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
@@ -36,3 +37,6 @@ class FileStorage:
                 FileStorage.__objects = {
                     k: BaseModel(**v) for k, v in json.load(f).items()
                 }
+    classes = {
+            "BaseModel": BaseModel, "User": User,
+            }
