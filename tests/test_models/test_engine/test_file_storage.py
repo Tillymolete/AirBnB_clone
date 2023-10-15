@@ -28,13 +28,13 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(hasattr(FileStorage, "_FileStorage__file_path"), True)
         self.assertIsInstance(FileStorage._FileStorage__file_path, str)
         self.assertEqual(FileStorage._FileStorage__objects, {})
-    
+
     def test_objects(self):
         """ Tests the attribute __objects"""
 
         self.assertIsInstance(FileStorage._FileStorage__objects, dict)
         self.assertEqual(FileStorage._FileStorage__objects, {})
-    
+
     def test_all_property(self):
         """ Tests the nethod all"""
         self.assertIsInstance(models.storage.all(), dict)
@@ -61,7 +61,7 @@ class TestFileStorage(unittest.TestCase):
         self.storage.new(instance)
         self.assertIn(k, self.storage.all())
         self.assertIs(self.storage.all()[k], instance)
-    
+
     def test_save(self):
         """ Tests the method save"""
         n_dict = {
