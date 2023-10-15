@@ -7,7 +7,13 @@ from models import storage
 
 
 classes = {
-        "BaseModel": BaseModel
+        "BaseModel": BaseModel,
+        "User": User,
+        "City": City,
+        "State": State,
+        "Amenity": Amenity.
+        "place": Place,
+        "Review":Review
         }
 
 

@@ -5,7 +5,6 @@ import os
 import json
 from pathlib import Path
 from models.base_model import BaseModel
-from models.user import User
 
 
 class FileStorage:
@@ -25,7 +24,7 @@ class FileStorage:
 
     def save(self):
         """Serializes the objects to JSON file"""
-        new_dict = {k: v.to_dict() for k,v in FileStorage.__objects.items()}
+        new_dict = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
         with open(FileStorage.__file_path, "w") as f:
             json.dump(new_dict, f)
 
@@ -37,6 +36,3 @@ class FileStorage:
                 FileStorage.__objects = {
                     k: BaseModel(**v) for k, v in json.load(f).items()
                 }
-    classes = {
-            "BaseModel": BaseModel, "User": User,
-            }
